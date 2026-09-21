@@ -1,0 +1,240 @@
+{
+  "client": "Silas Passos + Logisbk",
+  "concept": "A mesma vontade de vencer.",
+  "objective": "Associar as conquistas esportivas de Silas à parceria com LogisBank e direcionar novos interessados ao cadastro oficial de conta empresarial.",
+  "assets": {
+    "silas-passos-logo.png": {
+      "source": "/Users/paulohenrique/Downloads/Silas passos.png",
+      "verified": "Marca comparada com a apresentação original, página 10. Cópia sem redesenho; CSS inverte para branco."
+    },
+    "logisbank-logo-white.png": {
+      "source": "clientes/Logisbank/Logisbank logo Ativo 4@2x.png"
+    },
+    "logisbank-logo.png": {
+      "source": "clientes/Logisbank/Logisbank logo Ativo 2@2x.png"
+    },
+    "hero-racing.webp": {
+      "source": "/Users/paulohenrique/Downloads/4k video geral logis e emasfi .mp4",
+      "frame_seconds": 6.25,
+      "processing": "Extração de frame e compressão WebP, sem alteração de marcas."
+    },
+    "silas-portrait.webp": {
+      "source": "https://drive.google.com/file/d/1J2K2i3Y9FZWgNswtD-ho6nUAjX3JnbFy/view",
+      "original": "COPA HB20 SILLAS CAMPEÃO (54).JPG",
+      "processing": "Orientação EXIF, redução para 2000px, WebP."
+    },
+    "filme-poster.jpg": {
+      "source": "vídeo original fornecido",
+      "frame_seconds": 43
+    },
+    "silas-logisbank-filme.mp4": {
+      "source": "/Users/paulohenrique/Downloads/4k video geral logis e emasfi .mp4",
+      "source_bytes": 826674191,
+      "output_bytes": 26075153,
+      "duration_seconds": 58.816009,
+      "video": "H264 1920x1080 30fps",
+      "audio": "AAC 128k",
+      "processing": "Vídeo integral, áudio preservado, faststart, redução de 96,85%. Nenhuma alteração do original."
+    },
+    "filme-pt.vtt": {
+      "source": "Análise local de áudio via whisper.cpp base, pt, sem falas identificadas; faixa descritiva de música."
+    },
+    "logisbk-logo.png": {
+      "source": "/Users/paulohenrique/Desktop/Logo Logisbk laranjahorizontal.png",
+      "processing": "Cópia original, sem redesenho"
+    },
+    "logisbk-logo-white.png": {
+      "source": "/Users/paulohenrique/Desktop/Logo Logisbk branco horizontal.png",
+      "processing": "Cópia original, sem redesenho"
+    },
+    "hero-racing-loop.mp4": {
+      "source": "assets/silas-logisbank-filme.mp4",
+      "original_source": "/Users/paulohenrique/Downloads/4k video geral logis e emasfi .mp4",
+      "source_ranges_seconds": [
+        [
+          6,
+          9
+        ],
+        [
+          17.5,
+          19.5
+        ],
+        [
+          21,
+          24
+        ],
+        [
+          29.5,
+          32
+        ],
+        [
+          33.5,
+          35.5
+        ]
+      ],
+      "processing": "Cortes de corrida e cockpit, concatenados localmente, H.264 1600x900, 30fps, sem faixa de áudio, faststart.",
+      "duration_seconds": 12.666016,
+      "bytes": 4716316,
+      "playback": "Autoplay silencioso em loop, playsinline, botão de pausa; pausa fora da tela e respeita reduced motion."
+    },
+    "apex-scroll.mp4": {
+      "provider": "Higgsfield",
+      "model": "seedance_2_5",
+      "job_id": "d2a7d5d1-e078-46e6-9a9c-5394da034da3",
+      "source": "https://d8j0ntlcm91z4.cloudfront.net/user_3E4wU7cO790rsqbn5xdBVhYVkMT/hf_20260920_015233_d2a7d5d1-e078-46e6-9a9c-5394da034da3.mp4",
+      "description": "Curva abstrata de luz laranja sobre asfalto preto. Sem pessoas, marcas ou veículo sintético.",
+      "estimated_credits": 35,
+      "duration_seconds": 5.041667,
+      "bytes": 2216195,
+      "processing": "H264 1440x810, todos os frames-chave para scrubbing, sem áudio, faststart.",
+      "playback": "Pausado; posição sincronizada à rolagem. Blob local para suportar servidores sem byte-range. Carregado perto da seção, apenas sem preferência de movimento reduzido."
+    },
+    "apex-poster.webp": {
+      "source": "apex-scroll.mp4 at 1.8s",
+      "processing": "Frame extraído localmente, WebP qualidade 85."
+    },
+    "trophy-instagram-champion.webp": {
+      "source": "https://www.instagram.com/p/DdHbDRto1OV/?img_index=1",
+      "post_date": "2026-09-10",
+      "description": "Silas beijando e erguendo um troféu Copa Hyundai HB20.",
+      "processing": "Imagem real do carrossel público; 1080x1350, WebP qualidade 88. Sem recorte, reconstrução ou alteração de marcas.",
+      "bytes": 454810,
+      "event_date": "Não inferida da foto; o post não identifica a data da entrega do troféu."
+    },
+    "trophy-instagram-celebration.webp": {
+      "source": "https://www.instagram.com/p/DdHbDRto1OV/?img_index=11",
+      "post_date": "2026-09-10",
+      "description": "Silas de capacete com o punho erguido.",
+      "processing": "Imagem real do carrossel público; 1080x1350, WebP qualidade 88. Sem recorte, reconstrução ou alteração de marcas.",
+      "bytes": 340954,
+      "event_date": "Não inferida da foto; o post não identifica a data da entrega do troféu."
+    },
+    "trophy-instagram-victory.webp": {
+      "source": "https://www.instagram.com/p/DdHbDRto1OV/?img_index=12",
+      "post_date": "2026-09-10",
+      "description": "Outro enquadramento da comemoração de Silas.",
+      "processing": "Imagem real do carrossel público; 1080x1350, WebP qualidade 88. Sem recorte, reconstrução ou alteração de marcas.",
+      "bytes": 206706,
+      "event_date": "Não inferida da foto; o post não identifica a data da entrega do troféu."
+    },
+    "fire-logo-reveal.mp4": {
+      "provider": "Higgsfield",
+      "model": "Kling 3.0 Pro",
+      "job_id": "952092b4-209f-499c-bf97-760c54b0ab71",
+      "source": "https://d8j0ntlcm91z4.cloudfront.net/user_3E4wU7cO790rsqbn5xdBVhYVkMT/hf_20260920_022531_952092b4-209f-499c-bf97-760c54b0ab71.mp4",
+      "estimated_credits": 12.25,
+      "duration_seconds": 7.041667,
+      "bytes": 2510137,
+      "processing": "H264 yuv420p 1440x810 24fps, GOP 6; sem áudio, faststart.",
+      "keyframes": "Início: apex-scroll.mp4 4,8s. Final: símbolo original Logisbk em fundo preto, bbox505,208,430,393 no frame1440x810.",
+      "description": "Chama volumétrica contínua percorre a curva e forma o símbolo original. Último frame mantém logo, sem fade."
+    },
+    "fire-logo-reveal-poster.jpg": {
+      "source": "fire-logo-reveal.mp4 em4,75s",
+      "processing": "Frame do filme gerado, fogo formando símbolo."
+    },
+    "focus-cockpit.jpg": {
+      "source": "assets/silas-logisbank-filme.mp4",
+      "original_source": "/Users/paulohenrique/Downloads/4k video geral logis e emasfi .mp4",
+      "frame_seconds": 29,
+      "processing": "Frame real de Silas no cockpit, 1280x720 JPEG; sem alteração de identidade ou marcas."
+    },
+    "hero-racing-mobile.mp4": {
+      "source": "hero-racing-loop.mp4",
+      "processing": "Transcodificação local H264 yuv420p 960x540, 24fps, faststart; sem alteração do conteúdo.",
+      "bytes": 3015896,
+      "duration_seconds": 12.75,
+      "reduction_percent": 36.1,
+      "delivery": "Telas até 850px ou dispositivo com ponteiro de toque; fonte escolhida antes da primeira requisição."
+    },
+    "apex-scroll-mobile.mp4": {
+      "source": "apex-scroll.mp4",
+      "processing": "Transcodificação local H264 yuv420p 960x540, 24fps, faststart; sem alteração do conteúdo.",
+      "bytes": 414516,
+      "duration_seconds": 5.041667,
+      "reduction_percent": 81.3,
+      "delivery": "Telas até 850px ou dispositivo com ponteiro de toque; fonte escolhida antes da primeira requisição."
+    },
+    "fire-logo-mobile.mp4": {
+      "source": "fire-logo-reveal.mp4",
+      "processing": "Transcodificação local H264 yuv420p 960x540, 24fps, faststart; sem alteração do conteúdo.",
+      "bytes": 751346,
+      "duration_seconds": 7.041667,
+      "reduction_percent": 70.1,
+      "delivery": "Telas até 850px ou dispositivo com ponteiro de toque; fonte escolhida antes da primeira requisição."
+    },
+    "silas-filme-mobile.mp4": {
+      "source": "silas-logisbank-filme.mp4",
+      "processing": "Transcodificação local H264 yuv420p 960x540, 24fps, faststart; sem alteração do conteúdo.",
+      "bytes": 14315502,
+      "duration_seconds": 58.875,
+      "reduction_percent": 45.1,
+      "delivery": "Telas até 850px ou dispositivo com ponteiro de toque; fonte escolhida antes da primeira requisição."
+    },
+    "hero-racing-mobile.webp": {
+      "source": "hero-racing.webp",
+      "processing": "Redução proporcional para960px e compressão WebP80, sem alteração do conteúdo.",
+      "bytes": 38118,
+      "delivery": "Picture/source e preload condicional, antes de carregar o vídeo de fundo."
+    },
+    "barlow-condensed-700.woff": {
+      "source": "barlow-condensed-700.ttf",
+      "processing": "Conversão local TTF para WOFF, preservando glifos e licença.",
+      "bytes": 42676
+    },
+    "manrope-400.woff": {
+      "source": "manrope-400.ttf",
+      "processing": "Conversão local TTF para WOFF, preservando glifos e licença.",
+      "bytes": 41368
+    },
+    "manrope-600.woff": {
+      "source": "manrope-600.ttf",
+      "processing": "Conversão local TTF para WOFF, preservando glifos e licença.",
+      "bytes": 41424
+    }
+  },
+  "sources": [
+    "https://www.cba.org.br/campeonato/noticiasinfo/316/3318/adilson-jr-otavio-colle-silas-passos-e-mika-peixoto-sao-campeoes-da-copa-hyundai-hb20-2026",
+    "https://vg3.pressroom.com.br/46136814e5/24h-series-silas-passos-vence-as-24h-de-dubai.html",
+    "https://www.logisbank.com.br/conta-digital/",
+    "clientes/Silas-Passos/reunioes/2026-08-31-briefing-consolidado.md"
+  ],
+  "cta": "https://www.logisbank.com.br/conta-digital/",
+  "status": "local_preview_not_published",
+  "brand": {
+    "name": "Logisbk",
+    "primary_color": "#F27400",
+    "source": "/Users/paulohenrique/Desktop/Logo Logisbk laranjahorizontal.png",
+    "direction": "Laranja dominante com preto; correção expressa do Paulo nesta conversa."
+  },
+  "fire_logo_reveal": {
+    "method": "Vídeo real Higgsfield com keyframes de referência. Canvas e sistema de faíscas rejeitados foram removidos.",
+    "behavior": "Busca no tempo sincronizada à rolagem e reversível, Blob para prévia sem range; sem autoplay; reduzido e semJS não carregam clipes.",
+    "branding": "Wordmark original em SVG com recorte de exibição do PNG autêntico; sem redesenho."
+  },
+  "content_sources": {
+    "origem_96_e_1996": "DOSSIE-MESTRE.md seções 5.1 e 5.2, entrevista de 31/08/2026",
+    "timeline": "DOSSIE-MESTRE.md seção 2; conquistas verificadas nas fontes públicas do rodapé",
+    "championship": "CBA, 26/08/2026: classe Super, 5 vitórias, 3 poles, 7 etapas",
+    "dubai": "VG3, 19/01/2026: CUPRA TCR, Asbest Racing, vitória na categoria TCE"
+  },
+  "photo_presentation": {
+    "method": "Mockup editorial de capa em CSS com perspectiva, lombada/páginas e selo; fotos secundárias em recortes arredondados assimétricos sobrepostos.",
+    "photos": "Pixels dos arquivos originais preservados; apenas enquadramento e apresentação CSS."
+  },
+  "new_value_sections": [
+    "Vitória: conquistas de Silas e próxima etapa empresarial",
+    "Foco: preparação/trackwalk e extrato completo",
+    "Perseverança: constância na prova e pagamentos/rotina",
+    "Inteligência emocional: reflexão editorial sobre pressão e organização em equipe"
+  ],
+  "mobile_optimization": {
+    "body_copy": "15px, line-height 1.8 nas telas até1024px",
+    "touch": "controles principais e navegação com altura mínima44px",
+    "safe_areas": "viewport-fit=cover e env(safe-area-inset-*)",
+    "data_saver": "saveData/2G: poster e conteúdo estático, sem download automático de vídeo; reprodução manual disponível",
+    "orientation": "Cenas de scroll e abertura ajustadas para paisagem com altura até500px",
+    "verification": "qa/mobile.cjs em Chromium e WebKit, layouts320–915px e tablet768px",
+    "slow_network": "100KB/s,150ms de latência: imagem inicial pronta e página liberada em6703ms no ensaio local. Resultado simulado, não garantia para toda rede."
+  }
+}
