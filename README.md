@@ -38,7 +38,7 @@ Verificações: 320, 390, 768, 1440 e 1920px; ausência de overflow/erros de JS/
 
 ## Publicação
 
-Estado desta entrega: prévia local, não publicada. Hospedar `index.html`, `styles.css`, `app.js` e `assets/` juntos em hospedagem estática com HTTPS e suporte a byte-range para MP4. As pastas de QA e documentação não são necessárias no servidor público. Quando o domínio definitivo for definido, configurar canonical, URL e imagem Open Graph absolutas. Publicação e alterações no cadastro do banco exigem autorização própria.
+Estado desta entrega: publicada em https://phfer.github.io/silas-logisbk-lp/ O projeto é separado do site institucional `logisbank-site.vercel.app`. Hospedar `index.html`, `styles.css`, `app.js` e `assets/` juntos em hospedagem estática com HTTPS e suporte a byte-range para MP4. As pastas de QA e documentação não são necessárias no servidor público. Quando o domínio definitivo for definido, configurar canonical, URL e imagem Open Graph absolutas. Publicação e alterações no cadastro do banco exigem autorização própria.
 
 ## Identidade corrigida
 

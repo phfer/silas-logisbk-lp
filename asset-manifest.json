@@ -200,7 +200,7 @@
     "clientes/Silas-Passos/reunioes/2026-08-31-briefing-consolidado.md"
   ],
   "cta": "https://www.logisbank.com.br/conta-digital/",
-  "status": "local_preview_not_published",
+  "status": "published",
   "brand": {
     "name": "Logisbk",
     "primary_color": "#F27400",
@@ -236,5 +236,13 @@
     "orientation": "Cenas de scroll e abertura ajustadas para paisagem com altura até500px",
     "verification": "qa/mobile.cjs em Chromium e WebKit, layouts320–915px e tablet768px",
     "slow_network": "100KB/s,150ms de latência: imagem inicial pronta e página liberada em6703ms no ensaio local. Resultado simulado, não garantia para toda rede."
+  },
+  "published_url": "https://phfer.github.io/silas-logisbk-lp/",
+  "published_at": "2026-09-21T13:31:37.268073+00:00",
+  "hosting": {
+    "provider": "GitHub Pages",
+    "repository": "https://github.com/phfer/silas-logisbk-lp",
+    "branch": "main",
+    "project": "separate from logisbank-site.vercel.app"
   }
 }
