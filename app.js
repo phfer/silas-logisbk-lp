@@ -124,6 +124,7 @@ const chapters = [...story.querySelectorAll('article')];
 const laps = [...story.querySelectorAll('.story-laps>span')];
 const progressBar = document.querySelector('.reading-progress');
 const clarity = document.querySelector('.calm-art');
+const claritySteps = [...clarity.querySelectorAll('.calm-axis li')];
 let scrollFrame = 0;
 const fireReveal = document.querySelector('#fire-reveal');
 const scrollFilms = [apex, fireReveal].map(video => ({video, target:0, last:-1, requested:false}));
@@ -160,15 +161,20 @@ function paintScroll() {
     return;
   }
   if (!document.documentElement.classList.contains('scroll-story')) setScrollMode();
-  // Complete the arc while the panel is still visible, including on narrow screens.
+  // Keep the full panel in view while its three steps advance whenever it fits.
   const clarityRect = clarity.getBoundingClientRect();
-  const clarityProgress = clamp((innerHeight - clarityRect.top) / (innerHeight * .8 + clarityRect.height * .25), 0, 1);
+  const clarityStart = innerHeight - clarityRect.height - 24;
+  const clarityProgress = clamp((clarityStart - clarityRect.top) / Math.max(120, clarityStart - 80), 0, 1);
   clarity.style.setProperty('--calm-progress', clarityProgress);
   clarity.style.setProperty('--calm-rotation', `${clarityProgress * 280}deg`);
   clarity.style.setProperty('--calm-dash', 100 * (1 - clarityProgress));
   clarity.style.setProperty('--calm-blur', `${(1 - clarityProgress) * 1.5}px`);
   clarity.style.setProperty('--calm-glow', `${clarityProgress * 25}px`);
   clarity.dataset.phase = String(Math.min(2, Math.floor(clarityProgress * 3)));
+  claritySteps.forEach((step, i) => {
+    if (i === Number(clarity.dataset.phase)) step.setAttribute('aria-current', 'step');
+    else step.removeAttribute('aria-current');
+  });
   const rect = story.getBoundingClientRect();
   const progress = clamp(-rect.top / Math.max(1, rect.height - innerHeight), 0, 1);
   const narrative = clamp(progress / .76, 0, 1);
@@ -205,6 +211,8 @@ function scheduleScroll() {
 function setScrollMode() {
   document.documentElement.classList.toggle('scroll-story', !reducedMotion.matches && !saveData);
   if (reducedMotion.matches || saveData) {
+    delete clarity.dataset.phase;
+    claritySteps.forEach(step => step.removeAttribute('aria-current'));
     motionPaused = true;
     syncHeroPlayback();
     scrollFilms.forEach(state => state.video.pause());
