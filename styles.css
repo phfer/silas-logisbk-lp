@@ -785,3 +785,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
 .hero-picture{display:contents}
 @media(max-width:560px){.scroll-story .story-footer{opacity:calc(1 - var(--fire-signoff,0))}}
+
+/* 19/10 · ajustes do Leon: foto da Mercedes na Perseverança e capítulos que passam sozinhos */
+.mercedes-art { margin:0; display:flex; flex-direction:column; justify-content:center; gap:18px; min-height:490px; }
+.mercedes-art img { width:100%; height:auto; aspect-ratio:1280/854; object-fit:cover; border-radius:18px; box-shadow:0 28px 60px #0000002e; }
+.mercedes-art figcaption { display:flex; justify-content:space-between; gap:15px; font-size:9px; letter-spacing:.15em; border-top:1px solid #8b69453d; padding-top:18px; }
+@media(max-width:850px){ .mercedes-art { min-height:0; } }
+.scroll-story .mindset-grid article { transition:opacity .6s ease, transform .6s ease; }

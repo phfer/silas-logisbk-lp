@@ -126,6 +126,15 @@ const progressBar = document.querySelector('.reading-progress');
 const clarity = document.querySelector('.calm-art');
 const claritySteps = [...clarity.querySelectorAll('.calm-axis li')];
 let scrollFrame = 0;
+// Os três capítulos passam sozinhos enquanto a seção está na tela (pedido do Leon, 19/10); a rolagem só leva ao fim.
+const AUTO_CHAPTER_MS = 3500;
+let autoChapter = 0;
+let autoTimer = 0;
+function syncAutoChapters(visible) {
+  const running = visible && document.documentElement.classList.contains('scroll-story');
+  if (running && !autoTimer) autoTimer = setInterval(() => { autoChapter = (autoChapter + 1) % 3; scheduleScroll(); }, AUTO_CHAPTER_MS);
+  if (!running && autoTimer) { clearInterval(autoTimer); autoTimer = 0; }
+}
 const fireReveal = document.querySelector('#fire-reveal');
 const scrollFilms = [apex, fireReveal].map(video => ({video, target:0, last:-1, requested:false}));
 const clamp = (value, low, high) => Math.min(high, Math.max(low, value));
@@ -177,13 +186,13 @@ function paintScroll() {
   });
   const rect = story.getBoundingClientRect();
   const progress = clamp(-rect.top / Math.max(1, rect.height - innerHeight), 0, 1);
-  const narrative = clamp(progress / .76, 0, 1);
-  const chapter = Math.min(2, Math.floor(narrative * 3));
+  const visible = rect.top < innerHeight && rect.bottom > 0;
+  syncAutoChapters(visible);
+  const chapter = autoChapter;
   story.dataset.chapter = String(chapter);
   chapters.forEach((article, i) => {
-    const distance = (narrative - (i + .5) / 3) * 3;
     article.style.setProperty('--chapter-opacity', i === chapter ? String(1 - smooth((progress - .7) / .05)) : '0');
-    article.style.setProperty('--chapter-shift', `${clamp(-distance * 40, -50, 50)}px`);
+    article.style.setProperty('--chapter-shift', i === chapter ? '0px' : '24px');
     laps[i].classList.toggle('is-active', i <= chapter);
   });
   story.style.setProperty('--story-progress', progress);
@@ -194,6 +203,12 @@ function paintScroll() {
   story.style.setProperty('--apex-opacity', 1 - fireOpacity);
   for (const state of scrollFilms) {
     if (rect.top < innerHeight * 1.5 && rect.bottom > 0 && !state.requested) loadScrollFilm(state);
+    if (state.video === apex) {
+      // o filme de fundo roda sozinho em laço junto com os capítulos
+      if (visible && apex.classList.contains('is-ready')) { apex.loop = true; if (apex.paused) apex.play().catch(() => {}); }
+      else if (!visible && !apex.paused) apex.pause();
+      continue;
+    }
     if (Number.isFinite(state.video.duration)) {
       const position = state.video === apex ? progress / .8 : (progress - .72) / .28;
       state.target = clamp(position, 0, 1) * Math.max(0, state.video.duration - .05);
@@ -214,6 +229,7 @@ function setScrollMode() {
     delete clarity.dataset.phase;
     claritySteps.forEach(step => step.removeAttribute('aria-current'));
     motionPaused = true;
+    syncAutoChapters(false);
     syncHeroPlayback();
     scrollFilms.forEach(state => state.video.pause());
     chapters.forEach(article => { article.style.removeProperty('--chapter-opacity'); article.style.removeProperty('--chapter-shift'); });
@@ -223,7 +239,7 @@ function setScrollMode() {
 
 for (const state of scrollFilms) {
   state.video.addEventListener('loadeddata', () => { state.video.classList.add('is-ready'); scheduleScroll(); });
-  state.video.addEventListener('seeked', () => seekScrollFilm(state));
+  state.video.addEventListener('seeked', () => { if (state.video !== apex) seekScrollFilm(state); });
   state.video.addEventListener('error', () => {
     state.video.classList.remove('is-ready');
     console.warn('Filme indisponível; fundo estático preservado.');
