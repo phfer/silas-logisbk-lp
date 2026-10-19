@@ -136,9 +136,32 @@ function syncAutoChapters(visible) {
   if (!running && autoTimer) { clearInterval(autoTimer); autoTimer = 0; }
 }
 const fireReveal = document.querySelector('#fire-reveal');
+const noQuit = document.querySelector('.no-quit');
+const noQuitCar = noQuit.querySelector('.no-quit-car');
 const scrollFilms = [apex, fireReveal].map(video => ({video, target:0, last:-1, requested:false}));
 const clamp = (value, low, high) => Math.min(high, Math.max(low, value));
 const smooth = value => { const x = clamp(value, 0, 1); return x * x * (3 - 2 * x); };
+
+// A Mercedes entra pela esquerda, freia no centro e o rastro revela a frase.
+function paintNoQuit() {
+  const rect = noQuit.getBoundingClientRect();
+  if (rect.bottom < 0 || rect.top > innerHeight) return;
+  const progress = clamp(-rect.top / Math.max(1, rect.height - innerHeight), 0, 1);
+  const t = clamp(progress / .72, 0, 1);
+  const drive = 1 - (1 - t) ** 3;
+  const speed = t < 1 ? (1 - t) ** 2 : 0;
+  const stageWidth = noQuit.clientWidth;
+  const carWidth = noQuitCar.offsetWidth;
+  const x = (drive - 1) * (stageWidth / 2 + carWidth);
+  const front = stageWidth / 2 + carWidth / 2 + x;
+  const style = noQuit.style;
+  style.setProperty('--nq-drive', drive.toFixed(3));
+  style.setProperty('--nq-speed', speed.toFixed(3));
+  style.setProperty('--nq-x', `${x.toFixed(1)}px`);
+  style.setProperty('--nq-cut', `${Math.max(0, stageWidth - front - stageWidth * .06).toFixed(1)}px`);
+  style.setProperty('--nq-trail-o', speed.toFixed(3));
+  style.setProperty('--nq-coda', smooth((progress - .7) / .18).toFixed(3));
+}
 
 async function loadScrollFilm(state) {
   state.requested = true;
@@ -184,6 +207,7 @@ function paintScroll() {
     if (i === Number(clarity.dataset.phase)) step.setAttribute('aria-current', 'step');
     else step.removeAttribute('aria-current');
   });
+  paintNoQuit();
   const rect = story.getBoundingClientRect();
   const progress = clamp(-rect.top / Math.max(1, rect.height - innerHeight), 0, 1);
   const visible = rect.top < innerHeight && rect.bottom > 0;
@@ -233,6 +257,7 @@ function setScrollMode() {
     syncHeroPlayback();
     scrollFilms.forEach(state => state.video.pause());
     chapters.forEach(article => { article.style.removeProperty('--chapter-opacity'); article.style.removeProperty('--chapter-shift'); });
+    noQuit.style.cssText = '';
   }
   scheduleScroll();
 }

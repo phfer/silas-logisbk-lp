@@ -792,3 +792,18 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .mercedes-art figcaption { display:flex; justify-content:space-between; gap:15px; font-size:9px; letter-spacing:.15em; border-top:1px solid #8b69453d; padding-top:18px; }
 @media(max-width:850px){ .mercedes-art { min-height:0; } }
 .scroll-story .mindset-grid article { transition:opacity .6s ease, transform .6s ease; }
+/* Desistir nunca: a Mercedes atravessa a tela e o rastro de luz revela a frase (pedido do Leon, 19/10). Sem movimento, a composição fica parada. */
+.no-quit { position:relative; background:#0c0b0a; color:var(--white); overflow:clip; }
+.no-quit-stage { position:relative; min-height:100svh; display:grid; place-items:center; align-content:center; gap:clamp(18px,3vh,34px); padding:90px 0; text-align:center; overflow:hidden; }
+.no-quit-number { position:absolute; left:50%; top:50%; translate:-50% -54%; font:italic 700 clamp(380px,62vh,760px)/.8 var(--display); color:transparent; -webkit-text-stroke:1.5px #f2740066; letter-spacing:-.04em; pointer-events:none; scale:calc(1.18 - var(--nq-drive,1) * .18); opacity:calc(.35 + var(--nq-drive,1) * .65); }
+.no-quit-eyebrow { position:relative; margin:0; font-size:11px; letter-spacing:.32em; color:var(--accent); }
+.no-quit-title { position:relative; margin:0; width:100%; padding-inline:4vw; font:700 clamp(54px,9.4vw,170px)/.86 var(--display); text-transform:uppercase; letter-spacing:-.01em; clip-path:inset(-10% var(--nq-cut,0px) -10% 0); }
+.no-quit-title em { display:block; color:var(--accent); }
+.no-quit-road { position:relative; width:100%; height:clamp(170px,30vw,420px); }
+.no-quit-car { position:absolute; left:50%; bottom:0; width:min(74vw,1060px); height:auto; translate:calc(-50% + var(--nq-x,0px)) 0; transform:skewX(calc(var(--nq-speed,0) * -8deg)); filter:drop-shadow(0 30px 40px #000c) blur(calc(var(--nq-speed,0) * 2.5px)); }
+.no-quit-trail { position:absolute; inset:0; pointer-events:none; opacity:var(--nq-trail-o,0); translate:calc(var(--nq-drive,1) * 70vw - 40vw) 0; }
+.no-quit-trail::before { content:""; position:absolute; left:0; top:20%; width:26vw; height:2px; border-radius:2px; background:#f27400; filter:blur(.6px); box-shadow:38vw 9vh 0 #f27400aa, 12vw 21vh 0 #ffb46a88, 61vw 30vh 0 #f2740099, 27vw 41vh 0 #f27400cc, 70vw 47vh 0 #ffb46a77, 5vw 55vh 0 #f2740099, 48vw 60vh 0 #f27400bb, 83vw 14vh 0 #f2740066, 90vw 38vh 0 #ffb46a99, -20vw 33vh 0 #f27400aa, -8vw 50vh 0 #ffb46a88; }
+.no-quit-coda { position:relative; margin:0; font-size:14px; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); opacity:var(--nq-coda,1); }
+.scroll-story .no-quit { height:270vh; }
+.scroll-story .no-quit-stage { position:sticky; top:0; height:100svh; min-height:0; }
+@media(max-width:700px){ .no-quit-car{width:112vw} .no-quit-road{height:46vw} .no-quit-number{font-size:118vw} .no-quit-coda{font-size:11px} .scroll-story .no-quit{height:230vh} }
